@@ -1,4 +1,4 @@
-package com.gainwise.crashbuddy;
+package com.gainwise.exceptionbuddy;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

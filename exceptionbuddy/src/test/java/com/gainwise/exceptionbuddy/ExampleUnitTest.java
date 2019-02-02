@@ -1,4 +1,4 @@
-package com.gainwise.crashbuddy;
+package com.gainwise.exceptionbuddy;
 
 import org.junit.Test;
 
