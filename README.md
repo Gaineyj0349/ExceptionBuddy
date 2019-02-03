@@ -8,7 +8,10 @@ The source code for this app can be found at
 //TODO
 
 
-bring this into your root build.gradle
+
+Step 1. Add the JitPack repository to your build file
+
+Add it in your root build.gradle at the end of repositories:
 
 	allprojects {
 		repositories {
@@ -16,9 +19,10 @@ bring this into your root build.gradle
 			maven { url 'https://jitpack.io' }
 		}
 	}
-  
-  import the artiface
-  
-  	dependencies {
-	        implementation 'com.github.Gaineyj0349:ExceptionBuddy:1.0.2'
+	
+	
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.Gaineyj0349:ExceptionBuddy:Tag'
 	}
