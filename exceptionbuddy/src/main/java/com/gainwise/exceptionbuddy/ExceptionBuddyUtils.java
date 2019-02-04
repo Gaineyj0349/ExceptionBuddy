@@ -227,7 +227,7 @@ public class ExceptionBuddyUtils {
         LOGI("SettingExceptionCrashReport called with: " + message);
         SharedPreferences.Editor edit = context.getSharedPreferences(SPtag, Context.MODE_PRIVATE).edit();
         edit.putString("app_crash_report", message);
-        edit.apply();
+        edit.commit();
     }
 
     /**
@@ -249,7 +249,7 @@ public class ExceptionBuddyUtils {
     protected static void setDevExceptionCrashReport(Context context, String message){
         SharedPreferences.Editor edit = context.getSharedPreferences(SPtag, Context.MODE_PRIVATE).edit();
         edit.putString("dev_crash_report", message);
-        edit.apply();
+        edit.commit();
     }
 
     /**
@@ -270,7 +270,7 @@ public class ExceptionBuddyUtils {
     protected static void setDeviceInfoSet(Context context, boolean set){
         SharedPreferences.Editor edit = context.getSharedPreferences(SPtag, Context.MODE_PRIVATE).edit();
         edit.putBoolean("device_info_set", set);
-        edit.apply();
+        edit.commit();
     }
 
     /**
@@ -291,7 +291,7 @@ public class ExceptionBuddyUtils {
     protected static void setDevCustomCodeExecution(Context context, boolean set){
         SharedPreferences.Editor edit = context.getSharedPreferences(SPtag, Context.MODE_PRIVATE).edit();
         edit.putBoolean("dev_exception_status", set);
-        edit.apply();
+        edit.commit();
     }
 
     /**
@@ -312,7 +312,7 @@ public class ExceptionBuddyUtils {
     protected static void setDeviceInfo(Context context, String info){
         SharedPreferences.Editor edit = context.getSharedPreferences(SPtag, Context.MODE_PRIVATE).edit();
         edit.putString("device_info", info);
-        edit.apply();
+        edit.commit();
     }
 
     /**
@@ -335,6 +335,6 @@ public class ExceptionBuddyUtils {
         edit.putBoolean("dev_exception_status", true);
         edit.putString("dev_exception_crash_report", "");
         edit.putString("exception_crash_report", "");
-        edit.apply();
+        edit.commit();
     }
 }
