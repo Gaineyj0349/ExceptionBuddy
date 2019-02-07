@@ -36,8 +36,13 @@ The main strengths of this library is the ability to redirect to custom activity
  - 1 -
 Create a Directive class and extend the ExceptionBuddyDirective like so:
 
-	class MyDirective extends ExceptionBuddyDirective{
-	
+```
+/*this class is necessary - as the super class contains all of the custom exception handling code.
+  an instance of this class must be provided to the ExceptionBuddy builder
+*/
+class Case2Directive extends ExceptionBuddyDirective {
+
+
     //the context is given to this class from the builder object. just type context to use it
 
     @Override
@@ -53,8 +58,11 @@ Create a Directive class and extend the ExceptionBuddyDirective like so:
 
         Log.i("Case2Directive", "process id = " + android.os.Process.myPid());
     }
-	}
 
+}
+
+	
+```
 
  - 2 - 
 Create an Activity that extends PostExceptionActivity. When an uncaught exception occurs, this is the activity that the app will 	  redirect to before closing down the previous process. This class comes with 4 variables.
