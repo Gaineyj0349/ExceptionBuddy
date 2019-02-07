@@ -37,8 +37,8 @@ The main strengths of this library is the ability to redirect to custom activity
 Create a Directive class and extend the ExceptionBuddyDirective like so:
 
 
+class Case2Directive extends ExceptionBuddyDirective {
 
-    class MyDirective extends ExceptionBuddyDirective {
     /*this class is necessary - as the super class contains all of the custom exception handling code.
       an instance of this class must be provided to the ExceptionBuddy builder
     */
@@ -47,8 +47,20 @@ Create a Directive class and extend the ExceptionBuddyDirective like so:
 
     @Override
     public void executeOnException() throws ExceptionBuddy.CrashBuddyException {
-	//custom code can go here and/or in the PostExceptionActivity    }
-	}
+
+
+        /*
+       This option is provided in case the developer wants to execute some simple code like changing sharedpref
+       values, and still wants the android default uncaught exception behavior.
+       The process has become unstable, so things like showing a toast is not possible now, maybe a future update
+       this will be possible.
+       */
+
+        Log.i("Case2Directive", "process id = " + android.os.Process.myPid());
+    }
+
+}
+
 	
 	
 
