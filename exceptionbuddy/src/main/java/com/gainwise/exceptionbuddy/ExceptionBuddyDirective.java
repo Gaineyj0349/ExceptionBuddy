@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Looper;
 import android.util.Log;
 
 import java.text.DateFormat;
@@ -151,8 +152,7 @@ public abstract class ExceptionBuddyDirective implements Thread.UncaughtExceptio
                 Thread.setDefaultUncaughtExceptionHandler(defaultExceptionHandler);
                 ExceptionBuddyUtils.LOGI("Rethrowing exception to main handler..");
                 defaultExceptionHandler.uncaughtException(thread,throwable);
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(1);
+                Looper.loop();
             }
 
         }
