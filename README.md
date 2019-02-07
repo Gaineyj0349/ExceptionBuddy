@@ -6,7 +6,7 @@ Example app can be found at
 https://play.google.com/store/apps/details?id=com.gainwise.exceptionbuddytestapp
 
 
-The source code for the demop app can be found at
+The source code for the demo app can be found at
 https://github.com/Gaineyj0349/ExceptionBuddyApp
 
 
