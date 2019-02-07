@@ -1,4 +1,4 @@
-# CrashBuddy
+# ExeptionBuddy
 This library implements custom exception handling. 
 Javadocs can be found at www.gainwisetech.com/javadocs/ExceptionBuddy
 
