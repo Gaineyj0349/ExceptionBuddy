@@ -40,7 +40,7 @@ Create a Directive class and extend the ExceptionBuddyDirective like so:
 /*this class is necessary - as the super class contains all of the custom exception handling code.
   an instance of this class must be provided to the ExceptionBuddy builder
 */
-class Case2Directive extends ExceptionBuddyDirective {
+class MyDirective extends ExceptionBuddyDirective {
 
 
     //the context is given to this class from the builder object. just type context to use it
