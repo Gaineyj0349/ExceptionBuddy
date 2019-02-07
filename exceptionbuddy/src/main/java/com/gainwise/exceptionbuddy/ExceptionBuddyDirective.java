@@ -4,7 +4,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Looper;
 import android.util.Log;
 
 import java.text.DateFormat;
@@ -101,6 +100,7 @@ public abstract class ExceptionBuddyDirective implements Thread.UncaughtExceptio
         ExceptionBuddyUtils.LOGI("...starting new activity");
         Intent intent = new Intent(context, postExceptionActivityIn);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
         }
 
@@ -151,7 +151,7 @@ public abstract class ExceptionBuddyDirective implements Thread.UncaughtExceptio
                 Thread.setDefaultUncaughtExceptionHandler(defaultExceptionHandler);
                 ExceptionBuddyUtils.LOGI("Rethrowing exception to main handler..");
                 defaultExceptionHandler.uncaughtException(thread,throwable);
-         
+
             }
 
         }
