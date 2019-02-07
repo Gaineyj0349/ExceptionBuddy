@@ -30,14 +30,15 @@ Step 2. Add the dependency
 	}
 
 
-This library simple gives the developer control over what happens when an uncaught exception occurs. 
-The main strengths of this library is the ability to redirect to custom activity upon uncaught exception, and have the detailed and formatted exception information available in that activity to do what you wish.
+This library simply gives the developer control over what happens when an uncaught exception occurs. 
+The main strengths of this library is the ability to redirect to custom activity upon uncaught exception, and have the detailed and formatted exception information available in that activity to do what you wish. This Directive also has access to the activity context (just type context to use it)
 
  - 1 -
 Create a Directive class and extend the ExceptionBuddyDirective like so:
 
-class MyDirective extends ExceptionBuddyDirective {
 
+
+    class MyDirective extends ExceptionBuddyDirective {
     /*this class is necessary - as the super class contains all of the custom exception handling code.
       an instance of this class must be provided to the ExceptionBuddy builder
     */
@@ -46,37 +47,29 @@ class MyDirective extends ExceptionBuddyDirective {
 
     @Override
     public void executeOnException() throws ExceptionBuddy.CrashBuddyException {
-	//custom code can go here and/or in the PostExceptionActivity
-    }
-}
+	//custom code can go here and/or in the PostExceptionActivity    }
+	}
+	
+	
+
 
 
  - 2 - 
- Create an Activity that extends PostExceptionActivity. When an uncaught exception occurs, this is the activity that the app will 	     redirect to before closing down the previous process. This class comes with 3 variables.
- 	
-    /**
-     * this variable will hold the app's exception report
-     */
-     public String EXCEPTION_REPORT;
-    
-     /**
-     * this variable will hold if the developer's custom code successfully executed (in the directive's executeOnException.
-     */
-     public boolean DEV_CUSTOM_CODE_COMPLETED;
-    
-    
-    
-     /**
-     * this variable will hold the developer's code exception report (if applicable)
-     */
-      public String DEV_CUSTOM_CODE_EXCEPTION_REPORT;
-       
+Create an Activity that extends PostExceptionActivity. When an uncaught exception occurs, this is the activity that the app will 	  redirect to before closing down the previous process. This class comes with 4 variables.
  
-    
-    /**
-     * this variable will hold the device's information
-     */
-    public String PHONE_INFO;
+  public String EXCEPTION_REPORT; 
+  this variable will hold the app's exception report
+  
+  public boolean DEV_CUSTOM_CODE_COMPLETED;
+  this variable will hold if the developer's custom code successfully executed (in the directive's executeOnException.
+  
+  public String DEV_CUSTOM_CODE_EXCEPTION_REPORT;
+  this variable will hold the developer's code exception report (if applicable)
+  
+  public String PHONE_INFO;
+  this variable will hold the device's information
+  
+
     
    
  - 3 - 
