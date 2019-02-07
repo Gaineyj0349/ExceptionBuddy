@@ -140,18 +140,18 @@ public abstract class ExceptionBuddyDirective implements Thread.UncaughtExceptio
             ExceptionBuddyUtils.LOGI("App exception details: " + appReport);
             ExceptionBuddyUtils.setDevCustomCodeExecution(context, completed);
 
-            Thread.setDefaultUncaughtExceptionHandler(defaultExceptionHandler);
-
             if(immediatelyInvoke){
                 emitBuddyBroadCastNow();
+                Thread.setDefaultUncaughtExceptionHandler(defaultExceptionHandler);
                 ExceptionBuddyUtils.LOGI("Current thread ID#: "+ thread.getId());
                 ExceptionBuddyUtils.LOGI("Killing process Pid#: "+ android.os.Process.myPid());
                 android.os.Process.killProcess(android.os.Process.myPid());
                 System.exit(1);
             }else{
+                Thread.setDefaultUncaughtExceptionHandler(defaultExceptionHandler);
                 ExceptionBuddyUtils.LOGI("Rethrowing exception to main handler..");
                 defaultExceptionHandler.uncaughtException(thread,throwable);
-                Looper.loop();
+         
             }
 
         }
