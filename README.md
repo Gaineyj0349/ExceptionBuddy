@@ -2,12 +2,9 @@
 This library implements custom exception handling. 
 Javadocs can be found at www.gainwisetech.com/javadocs/ExceptionBuddy
 
-Example app can be found at
-https://play.google.com/store/apps/details?id=com.gainwise.exceptionbuddytestapp
-
-
-The source code for the demo app can be found at
+View the source code & clone repo for demo app here:
 https://github.com/Gaineyj0349/ExceptionBuddyApp
+
 
 
 
