@@ -1,5 +1,6 @@
 # ExeptionBuddy
 This library implements custom exception handling. 
+Licensed under [MIT license](LICENSE).
 Javadocs can be found at www.gainwisetech.com/javadocs/ExceptionBuddy
 
 View the source code & clone repo for demo app here:
